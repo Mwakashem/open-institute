@@ -19,6 +19,9 @@ use App\Http\Controllers\UsernotificationsController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/documentation', function () {
+    return view('documentation.index');
+});
 Route::get('/profile', function () {
     return view('users.profile');
 })->name('profile');

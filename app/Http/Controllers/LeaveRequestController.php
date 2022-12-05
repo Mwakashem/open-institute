@@ -32,6 +32,15 @@ class LeaveRequestController extends Controller
         return view('leaves.index', compact('leaves'));
     }
 
+    public function leavesapi()
+    {
+        //
+        
+        $leaves = LeaveRequest::get()->toArray();
+        
+        return $leaves;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

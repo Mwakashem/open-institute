@@ -32,6 +32,11 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
     
+    public function usersapi()
+    {
+        $users = User::role('user')->get()->toArray();
+        return $users;
+    }
 
     public function edit(User $user)
     {

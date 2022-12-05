@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LeaveRequestController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/leaves-api', [LeaveRequestController::class, 'leavesapi']);
+Route::get('/users-api', [UserController::class, 'usersapi']);
